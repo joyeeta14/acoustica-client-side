@@ -6,19 +6,33 @@ import { FcMenu } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const elements = <>
+        <Link to='/'>Home</Link>
+        <Link to='/'>Instructors</Link>
+        <Link to='/'>Classes</Link>
+        <Link to='/'>Dashboard </Link>
+    </>
     return (
         <div>
-            <header className="absolute inset-x-0 top-0 z-50">
+            <header className=" absolute inset-x-0 top-0 z-50">
                 <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
-                        <div className="-m-1.5 p-1.5">
-                            <span className="sr-only">Your Company</span>
+                        <div className="-m-1.5 p-1.5 flex justify-center">
+                        <div className='pt-2'>
+                        <span className="sr-only">Your Company</span>
                             <img
                                 className="h-8 w-auto"
-                                src="https://e7.pngegg.com/pngimages/538/566/png-clipart-guitar-picks-acoustic-guitar-tattoo-sound-hole-guitar-pick-logo-tablature.png"
+                                src="https://media.istockphoto.com/id/939144958/vector/guitar-stylized-icon-vector-simple-lines-acoustic-guitar-design-element.jpg?s=612x612&w=0&k=20&c=KOw-qKVwYAPgriQq4svN10gdHbzItr3bzQLLdXumops="
                                 alt=""
                             />
+                        </div>
+                        <div>
+                        <h2 className='ps-3 text-white font-bold text-lg'>ACOUSTICA</h2>
+                        <p className="text-white ps-3 font-extralight">
+                            Music School
+                        </p>
+                        </div>
                         </div>
                     </div>
                     <div className="flex lg:hidden">
@@ -32,10 +46,9 @@ const Header = () => {
                         </button>
                     </div>
                     <div className="hidden lg:flex lg:gap-x-12">
-                        <Link className='text-white' to='/'>Home</Link>
-                        <Link className='text-white' to='/'>Instructors</Link>
-                        <Link className='text-white' to='/'>Classes</Link>
-                        <Link className='text-white' to='/'>Dashboard </Link>
+                    <div className="text-white  lg:flex lg:gap-x-12">
+                    {elements}
+                    </div>
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -72,14 +85,8 @@ const Header = () => {
                         <div className="mt-6 flow-root">
                             <div className="-my-6 divide-y divide-gray-500/10">
                                 <div className="space-y-2 py-6">
-                                    <div className='-mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 flex flex-col'>
-                                        <Link className='text-gray-900 ' to='/'>Home</Link>
-                                        <Link className='text-gray-900
-                                        pt-3' to='/'>Instructors</Link>
-                                        <Link className='text-gray-900
-                                        pt-3' to='/'>Classes</Link>
-                                        <Link className='text-gray-900
-                                        pt-3' to='/'>Dashboard </Link>
+                                    <div className='-mx-3 rounded-lg px-3 py-2 pt-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 flex flex-col'>
+                                    {elements}
                                     </div>
                                 </div>
                             </div>
