@@ -1,14 +1,47 @@
 // import React from 'react';
 
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+
+
 
 const Registration = () => {
+
+
+    const registerHandler= event =>{
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const name = form.name.value;
+        const url = form.url.value;
+        const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
+        
+        if (!/(?=.*[!@#$&*])(?=.*[A-Z])(?=.*[a-z]).{6,}$/.test(password)) {
+            Swal.fire(
+              'Weak Password!',
+              'Your password must contain Minimum six characters, at least one uppercase letter and one special character!',
+              'error'
+            )
+            return;
+          }
+
+        else if(password !== confirmPassword){
+            Swal.fire(
+                ' Wrong Password!',
+                'Confirm your password properly!',
+                'error'
+              );
+              return;
+        }
+    }
+
     return (
         <div>
             <div className="hero min-h-screen  bg-[url('https://i.ibb.co/vY5hwZM/pexels-skylar-kang-6044820.jpg')] py-10 px-28">
                 <div className="hero-content mt-10  flex-col lg:flex-row-reverse">
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form className="card-body px-16">
+                    <div className="card flex-shrink-0 w-full max-w-sm  bg-base-100">
+                        <form onSubmit={registerHandler} className="card-body px-16">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -31,7 +64,7 @@ const Registration = () => {
                                 <label className="label">
                                     <span className="label-text">Confirm Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="Confirm Password" className="input input-bordered" />
+                                <input type="password" name="confirmPassword" placeholder="Confirm Password" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
