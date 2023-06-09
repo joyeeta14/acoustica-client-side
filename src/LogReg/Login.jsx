@@ -37,7 +37,7 @@ const Login = () => {
                                     </button>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <p>New Here? Please <Link className="link link-hover text-lg link-neutral " to='/register'>Register </Link>Here</p>
+                                    <p>New Here? Please <Link className="link link-hover text-lg link-neutral " to='/registration'>Register </Link>Here</p>
                                 </div>
 
                             </form>
