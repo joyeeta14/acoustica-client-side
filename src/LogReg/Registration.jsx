@@ -1,12 +1,15 @@
 // import React from 'react';
 
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../Auth/AuthProvider";
 
 
 
 const Registration = () => {
 
+    const {userRegister}=useContext(AuthContext);
 
     const registerHandler= event =>{
         event.preventDefault();
@@ -16,8 +19,17 @@ const Registration = () => {
         const url = form.url.value;
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
+
+        if (!email,password,name,url) {
+            Swal.fire(
+              'Error!',
+              'You have to fill all the boxes!',
+              'error'
+            )
+            return;
+          }
         
-        if (!/(?=.*[!@#$&*])(?=.*[A-Z])(?=.*[a-z]).{6,}$/.test(password)) {
+       else if (!/(?=.*[!@#$&*])(?=.*[A-Z])(?=.*[a-z]).{6,}$/.test(password)) {
             Swal.fire(
               'Weak Password!',
               'Your password must contain Minimum six characters, at least one uppercase letter and one special character!',
@@ -34,6 +46,13 @@ const Registration = () => {
               );
               return;
         }
+
+        userRegister(email,password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => console.log(error.message))
     }
 
     return (
