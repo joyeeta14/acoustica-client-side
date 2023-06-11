@@ -1,17 +1,21 @@
 // import React from 'react';
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Auth/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 
 
 const Registration = () => {
 
-    const {userRegister}=useContext(AuthContext);
+    const authInfo = useContext(AuthContext);
+    const { userRegister } = authInfo;
 
-    const registerHandler= event =>{
+    const [user, setUser] = useState(null);
+
+    const registerHandler = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
@@ -20,44 +24,66 @@ const Registration = () => {
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
 
-        if (!email,password,name,url) {
+        if (!email || !password || !name || !url) {
             Swal.fire(
-              'Error!',
-              'You have to fill all the boxes!',
-              'error'
+                'Error!',
+                'You have to fill all the boxes!',
+                'error'
             )
             return;
-          }
-        
-       else if (!/(?=.*[!@#$&*])(?=.*[A-Z])(?=.*[a-z]).{6,}$/.test(password)) {
-            Swal.fire(
-              'Weak Password!',
-              'Your password must contain Minimum six characters, at least one uppercase letter and one special character!',
-              'error'
-            )
-            return;
-          }
+        }
 
-        else if(password !== confirmPassword){
+        else if (!/(?=.*[!@#$&*])(?=.*[A-Z])(?=.*[a-z]).{6,}$/.test(password)) {
+            Swal.fire(
+                'Weak Password!',
+                'Your password must contain Minimum six characters, at least one uppercase letter and one special character!',
+                'error'
+            )
+            return;
+        }
+
+        else if (password !== confirmPassword) {
             Swal.fire(
                 ' Wrong Password!',
                 'Confirm your password properly!',
                 'error'
-              );
-              return;
+            );
+            return;
         }
 
-        userRegister(email,password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error => console.log(error.message))
+        userRegister(email, password)
+            .then(result => {
+                const loggedInUser = result.user;
+                setUser(loggedInUser);
+                if (loggedInUser) {
+                    Swal.fire(
+                        'Registered!',
+                        'You have registered successfully!',
+                        'success'
+                    );
+                    form.reset();
+                    updateUser(loggedInUser,name,url);
+                }
+            })
+            .catch(error => console.log(error.message))
+
+
+            const updateUser = (user,name,url) => {
+                updateProfile(user, {
+                    displayName: name, photoURL: url
+                })
+                .then(() => {})
+                .catch((error) => {
+                    console.log(error.message);
+                });
+            }
     }
+
+
 
     return (
         <div>
-            <div className="hero min-h-screen  bg-[url('https://i.ibb.co/vY5hwZM/pexels-skylar-kang-6044820.jpg')] py-10 px-28">
+            <div className="hero min-h-screen  bg-[url('https://watermark.lovepik.com/photo/20211204/large/lovepik-acoustic-guitar-against-black-background-picture_501509661.jpg')] py-10 px-28">
                 <div className="hero-content mt-10  flex-col lg:flex-row-reverse">
                     <div className="card flex-shrink-0 w-full max-w-sm  bg-base-100">
                         <form onSubmit={registerHandler} className="card-body px-16">

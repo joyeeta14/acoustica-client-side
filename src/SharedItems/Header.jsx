@@ -1,12 +1,16 @@
 // import React from 'react';
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { FcMenu } from "react-icons/fc";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Auth/AuthProvider';
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const {user} = useContext(AuthContext);
+
     const elements = <>
         <Link to='/'>Home</Link>
         <Link to='/'>Instructors</Link>
@@ -51,13 +55,21 @@ const Header = () => {
                     </div>
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                        {/* Userphoto here */}
+                    {
+                    user ? 
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                            </div>
-                        </label>
+                        <div className="w-10 rounded-full">
+                            <img src={user.photoURL} />
+                        </div>
+                    </label>
+                    :
+                    <button className='text-white ps-5'>
+                    <Link className='text-white' to='/login'>Log In</Link>
+                </button>
+                     }
                         <button className='text-white ps-5'>
-                            <Link className='text-white' to='/login'>Log In</Link>
+                            <Link className='text-white' to='/login'>LogOut</Link>
                         </button>
                     </div>
                 </nav>
