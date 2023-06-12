@@ -1,5 +1,6 @@
 // import React from 'react';
 
+import Slider from "../Slider/Slider";
 import Banner from "./Banner";
 import SectionFloat from "./SectionFloat";
 
@@ -8,6 +9,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <SectionFloat></SectionFloat>
+            <Slider></Slider>
         </div>
     );
 };
