@@ -19,6 +19,6 @@ website name- ACOUSTICA
 - swiper.js
 
 Project Live Link - 
-https://64875bab9c4bbd0083faa212--storied-zuccutto-cc6ddb.netlify.app/
+https://64875bab9c4bbd0083faa212--storied-zuccutto-cc6ddb.netlify.app
 
 
