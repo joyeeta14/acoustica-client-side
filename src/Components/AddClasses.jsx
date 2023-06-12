@@ -20,7 +20,15 @@ const AddClasses = () => {
 
         const classInfo= {className,classPic,instructorName,instructorEmail, seats, price, status};
 
-        
+        fetch('http://localhost:5000/addClasses', {
+            method: "POST",
+            headers: {
+              "content-type": 'application/json'
+            },
+            body: JSON.stringify(classInfo)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
         
 
 
@@ -72,13 +80,19 @@ const AddClasses = () => {
                                     <label className="label">
                                         <span className="label-text">Price</span>
                                     </label>
-                                    <input type="text" name="price" placeholder="Price" className="input input-bordered" />
+                                    <input type="text" name="price" placeholder="$ Price" className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text"> Status</span>
                                     </label>
                                     <input type="text" name="status" placeholder="Status" readOnly value='pending' className="input input-bordered" />
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text"> Enroll</span>
+                                    </label>
+                                    <input type="text" name="enroll" placeholder="Enroll" value='0' className="input input-bordered" />
                                 </div>
                             </div>
 
