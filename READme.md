@@ -16,7 +16,9 @@ website name- ACOUSTICA
 - react-icons
 - react-router-dom
 - sweetalert2
+- swiper.js
 
-Project Live Link - https://sunny-lily-430e3b.netlify.app
+Project Live Link - 
+https://64875bab9c4bbd0083faa212--storied-zuccutto-cc6ddb.netlify.app/
 
 
