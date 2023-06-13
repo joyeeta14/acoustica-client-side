@@ -13,9 +13,10 @@ const Header = () => {
 
     const elements = <>
         <Link to='/'>Home</Link>
-        <Link to='/'>Instructors</Link>
-        <Link to='/'>Classes</Link>
-        <Link to='/'>Dashboard </Link>
+        <Link to='/instructor'>Instructor</Link>
+        <Link to='/addClasses'>Add Classes</Link>
+        <Link to='/myClasses'>Classes</Link>
+        <Link to='/manageUser'>Manage User </Link>
     </>
     return (
         <div>

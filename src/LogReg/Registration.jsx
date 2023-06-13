@@ -24,6 +24,8 @@ const Registration = () => {
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
 
+        
+
         if (!email || !password || !name || !url) {
             Swal.fire(
                 'Error!',
@@ -51,6 +53,7 @@ const Registration = () => {
             return;
         }
 
+
         userRegister(email, password)
             .then(result => {
                 const loggedInUser = result.user;
@@ -63,6 +66,15 @@ const Registration = () => {
                     );
                     form.reset();
                     updateUser(loggedInUser,name,url);
+                        const role = 'student';
+                    const userInfo = {email,name,url,loggedInUser,role};
+                    fetch('http://localhost:5000/users', {
+                        method: "POST",
+                        headers: {
+                          "content-type": 'application/json'
+                        },
+                        body: JSON.stringify(userInfo)
+                    })
                 }
             })
             .catch(error => console.log(error.message))

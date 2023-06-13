@@ -6,6 +6,8 @@ import Error from '../ErrorPage/Error';
 import Login from '../LogReg/Login';
 import Registration from '../LogReg/Registration';
 import AddClasses from '../Components/AddClasses';
+import MyClasses from '../Components/MyClasses';
+import ManageUser from '../Components/ManageUser';
 
 const router = createBrowserRouter([
     {
@@ -27,6 +29,20 @@ const router = createBrowserRouter([
             {
                 path:'/addClasses',
                 element:<AddClasses></AddClasses>
+            },
+            {
+                path:'/myClasses',
+                element: <MyClasses></MyClasses>
+            },
+            {
+                path:'/manageUser',
+                element: <ManageUser></ManageUser>,
+                
+            },
+            {
+                path:'/manageClasses',
+                element: <ManageUser></ManageUser>,
+                
             },
         ]
     },
