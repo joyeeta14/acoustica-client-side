@@ -24,9 +24,9 @@ const Banner = () => {
                         <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                             Playing Guitar Really Easy
                         </h1>
-                        <div className="mt-6 text-xl  font-medium leading-8 text-white">
+                        <div className="mt-6 text-xl pt-20 font-medium leading-8 text-white">
 
-                        <p className="pt-20">
+                        <p>
                            Playing guitar is obviously considered as a cool activity. Learn how to play this instrument easily with us
                         </p>
                         </div>

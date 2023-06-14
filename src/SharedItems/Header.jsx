@@ -15,6 +15,7 @@ const Header = () => {
         <Link to='/'>Home</Link>
         <Link to='/instructor'>Instructor</Link>
         <Link to='/addClasses'>Add Classes</Link>
+        <Link to='/approvedClasses'>Classes</Link>
         <Link to='/myClasses'>My Classes</Link>
         <Link to='/manageUser'>Manage User </Link>
         <Link to='/manageClasses'>Manage Classes </Link>

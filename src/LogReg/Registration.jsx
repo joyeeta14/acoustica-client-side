@@ -73,7 +73,7 @@ const Registration = () => {
                     updateUser(loggedInUser,name,url);
                         const role = 'student';
                     const userInfo = {email,name,url,loggedInUser,role};
-                    fetch('http://localhost:5000/users', {
+                    fetch('https://acoustica-server-side.vercel.app/users', {
                         method: "POST",
                         headers: {
                           "content-type": 'application/json'

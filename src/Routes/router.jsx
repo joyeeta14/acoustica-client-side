@@ -1,14 +1,14 @@
-import React from 'react';
+
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Layout/Main';
 import Home from '../Components/Home';
-import Error from '../ErrorPage/Error';
 import Login from '../LogReg/Login';
 import Registration from '../LogReg/Registration';
 import AddClasses from '../Components/AddClasses';
 import MyClasses from '../Components/MyClasses';
 import ManageUser from '../Components/ManageUser';
 import ManageClasses from '../Components/ManageClasses';
+import ApprovedClasses from '../Components/ApprovedClasses';
 import Database from '../Components/Database';
 import NotFoundPage from '../ErrorPage/404page';
 
@@ -51,6 +51,12 @@ const router = createBrowserRouter([
                 path:'/manageClasses',
                 element: <ManageClasses></ManageClasses>,
                 loader: ()=>fetch(' https://acoustica-server-side.vercel.app/addClasses')
+                
+            },
+            {
+                path:'/approvedClasses',
+                element: <ApprovedClasses></ApprovedClasses>,
+                loader: ()=>fetch('https://acoustica-server-side.vercel.app/approvedClasses')
                 
             },
         ]
