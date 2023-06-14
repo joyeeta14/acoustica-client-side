@@ -20,7 +20,7 @@ const AddClasses = () => {
 
         const classInfo= {className,classPic,instructorName,instructorEmail, seats, price, status};
 
-        fetch('http://localhost:5000/addClasses', {
+        fetch(' https://acoustica-server-side.vercel.app/addClasses', {
             method: "POST",
             headers: {
               "content-type": 'application/json'

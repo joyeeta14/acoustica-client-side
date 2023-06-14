@@ -8,7 +8,7 @@ const MyClasses = () => {
 
     const [classes, setClasses]=useState([]);
     useEffect( ()=> {
-        fetch(`http://localhost:5000/addClasses/${user?.email}`)
+        fetch(` https://acoustica-server-side.vercel.app/addClasses/${user?.email}`)
         .then(res=>res.json())
         .then(data => setClasses(data))
     } ,[user])

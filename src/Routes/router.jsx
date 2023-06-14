@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             {
                 path:'/manageClasses',
                 element: <ManageClasses></ManageClasses>,
-                loader: ()=>fetch('http://localhost:5000/addClasses')
+                loader: ()=>fetch(' https://acoustica-server-side.vercel.app/addClasses')
                 
             },
         ]

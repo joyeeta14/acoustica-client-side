@@ -7,7 +7,7 @@ import Table from "./Table";
 const ManageUser = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch(' https://acoustica-server-side.vercel.app/users')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])

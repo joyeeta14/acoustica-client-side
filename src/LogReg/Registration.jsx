@@ -14,6 +14,11 @@ const Registration = () => {
     const { userRegister } = authInfo;
 
     const [user, setUser] = useState(null);
+    const [isClick, setClick] = useState(false);
+
+    const handleClick = () => {
+        setClick(true);
+      };
 
     const registerHandler = event => {
         event.preventDefault();
@@ -111,11 +116,28 @@ const Registration = () => {
                                 </label>
                                 <input type="email" name="email" placeholder="Your Email" className="input input-bordered" />
                             </div>
+                        {
+                            isClick ? 
                             <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
+                            <label className="label">
+                                <span className="label-text"> Password</span>
+                            </label>
+                            <input type="text" name="password" placeholder="Password" className="input input-bordered" />
+                        </div> 
+                            
+                            :
+
+                            <div className="form-control">
+                            <label className="label">
+                                <span className="label-text"> Password</span>
+                            </label>
+                            <input type="password" name="password" placeholder="Password" className="input input-bordered" />
+                        </div>
+                        }
+                            <div className="form-control">
+                                <label onClick={handleClick} className="label">
+                               <p className="border border-dotted btn btn-link text-black">See Password</p>
                                 </label>
-                                <input type="password" name="password" placeholder="Your Password" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
