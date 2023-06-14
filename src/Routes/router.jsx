@@ -8,6 +8,9 @@ import Registration from '../LogReg/Registration';
 import AddClasses from '../Components/AddClasses';
 import MyClasses from '../Components/MyClasses';
 import ManageUser from '../Components/ManageUser';
+import ManageClasses from '../Components/ManageClasses';
+import Database from '../Components/Database';
+import NotFoundPage from '../ErrorPage/404page';
 
 const router = createBrowserRouter([
     {
@@ -40,15 +43,21 @@ const router = createBrowserRouter([
                 
             },
             {
+                path:'/database',
+                element: <Database></Database>,
+                
+            },
+            {
                 path:'/manageClasses',
-                element: <ManageUser></ManageUser>,
+                element: <ManageClasses></ManageClasses>,
+                loader: ()=>fetch('http://localhost:5000/addClasses')
                 
             },
         ]
     },
     {
         path:'/*',
-        element:<Error></Error>
+        element:<NotFoundPage></NotFoundPage>
     },
 ])
 

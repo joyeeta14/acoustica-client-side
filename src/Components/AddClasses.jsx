@@ -32,7 +32,7 @@ const AddClasses = () => {
     }
 
     return (
-        <div>
+        <div className="pt-10 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5B0q9MM_Yn4Ho8dPwMoj5yNQweFdouJ4BcxRxuR1d&s')]">
             <div>
                 <div className=" px-32 py-20 flex-col lg:flex-row-reverse">
                     <div className="card  w-full shadow-2xl bg-base-100">

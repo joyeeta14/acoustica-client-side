@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div className="bg-[url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701263297.jpg')]">
 
-            <div className="relative isolate px-6 pt-14 lg:px-8">
+            <div className="relative isolate px-6 pt-10 lg:px-8">
                 <div
                     className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
                     aria-hidden="true"
@@ -24,10 +24,12 @@ const Banner = () => {
                         <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                             Playing Guitar Really Easy
                         </h1>
-                        <p className="mt-6 text-lg font-medium leading-8 text-white">
-                            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                            fugiat veniam occaecat fugiat aliqua.
+                        <div className="mt-6 text-xl  font-medium leading-8 text-white">
+
+                        <p className="pt-20">
+                           Playing guitar is obviously considered as a cool activity. Learn how to play this instrument easily with us
                         </p>
+                        </div>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <button
                                 className="rounded-md bg-gray-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800"

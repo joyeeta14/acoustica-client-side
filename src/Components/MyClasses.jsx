@@ -14,12 +14,12 @@ const MyClasses = () => {
     } ,[user])
 
     return (
-        <div className="my-20">
-            <div className="overflow-x-auto">
+        <div className="py-10 font-semibold text-white bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5B0q9MM_Yn4Ho8dPwMoj5yNQweFdouJ4BcxRxuR1d&s')]">
+            <div className="overflow-x-auto mt-20">
   <table className="table table-zebra">
     {/* head */}
     <thead>
-      <tr>
+      <tr className="text-white text-base">
         <th></th>
         <th>Class Name</th>
         <th>Instructor Name</th>

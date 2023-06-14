@@ -8,7 +8,7 @@ const SectionFloat = () => {
                     <div className="max-w-md">
                         <h1 className="text-3xl font-bold">Opening Offer!</h1>
                         <h1 className="text-5xl pt-2 font-bold">Get A Free Lesson</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <p className="py-6">Are you new here? Explore our lessons for free on your first time.Give a shot to us and practice everyday with patience. </p>
                         
                         <div className="flex mx-24">
                         <button

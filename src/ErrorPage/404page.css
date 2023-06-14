@@ -1,0 +1,43 @@
+.not-found-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .message {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .illustration {
+    width: 50%;
+    max-width: 400px;
+    margin-bottom: 2rem;
+  }
+  
+  .home-link {
+    font-size: 1.2rem;
+    color: #eee7e7;
+    text-decoration: none;
+    border: 2px solid #eee7e7;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .home-link:hover {
+    background-color: #f5f0f0ad;
+    color: #fff;
+  }
+  
