@@ -11,6 +11,8 @@ import ManageClasses from '../Components/ManageClasses';
 import ApprovedClasses from '../Components/ApprovedClasses';
 import Database from '../Components/Database';
 import NotFoundPage from '../ErrorPage/404page';
+import Instructor from '../Components/Instructor';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 const router = createBrowserRouter([
     {
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addClasses',
-                element:<AddClasses></AddClasses>
+                element:<ProtectedRoute><AddClasses></AddClasses></ProtectedRoute>
             },
             {
                 path:'/myClasses',
@@ -39,24 +41,31 @@ const router = createBrowserRouter([
             },
             {
                 path:'/manageUser',
-                element: <ManageUser></ManageUser>,
+                element: <ProtectedRoute><ManageUser></ManageUser></ProtectedRoute> ,
+               
                 
             },
             {
                 path:'/database',
-                element: <Database></Database>,
+                element:<ProtectedRoute> <Database></Database></ProtectedRoute>,
                 
             },
             {
                 path:'/manageClasses',
-                element: <ManageClasses></ManageClasses>,
+                element: <ProtectedRoute><ManageClasses></ManageClasses></ProtectedRoute>,
                 loader: ()=>fetch(' https://acoustica-server-side.vercel.app/addClasses')
                 
             },
             {
                 path:'/approvedClasses',
-                element: <ApprovedClasses></ApprovedClasses>,
+                element: <ProtectedRoute><ApprovedClasses></ApprovedClasses></ProtectedRoute>,
                 loader: ()=>fetch('https://acoustica-server-side.vercel.app/approvedClasses')
+                
+            },
+            {
+                path:'/instructors',
+                element: <ProtectedRoute><Instructor></Instructor></ProtectedRoute>,
+                loader: ()=>fetch('https://acoustica-server-side.vercel.app/instructors')
                 
             },
         ]

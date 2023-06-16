@@ -3,7 +3,7 @@
 const CardClass = ({data}) => {
     return (
         <div>
-        <div className="card mt-40 card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card mt-40 card-compact lg:w-96 mx-20 lg:mx-0 my-20  bg-base-100 shadow-xl">
             <figure><img src={data.classPic} alt="" /></figure>
             <div className="card-body">
                 <h2 className="card-title">Name: {data.className}</h2>

@@ -11,7 +11,7 @@ const MyClasses = () => {
   useEffect(() => {
     fetch(` https://acoustica-server-side.vercel.app/addClasses/${user?.email}`)
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data =>setClasses(data))
   }, [user])
 
   return (
@@ -33,7 +33,7 @@ const MyClasses = () => {
             {/* row 1 */}
             <tr>
               <th>1</th>
-              <td> {} </td>
+              <td> {classes.className} </td>
               <td> {classes.instructorName} </td>
               <td> {classes.instructorEmail} </td>
               <td> {classes.price} </td>

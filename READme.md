@@ -18,7 +18,6 @@ website name- ACOUSTICA
 - sweetalert2
 - swiper.js
 
-Project Live Link - 
-https://64875bab9c4bbd0083faa212--storied-zuccutto-cc6ddb.netlify.app
+Project Live Link - https://6489ef4ea49647008cae08a6--inspiring-gaufre-c1d2b8.netlify.app/
 
 

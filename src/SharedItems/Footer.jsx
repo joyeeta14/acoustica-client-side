@@ -25,7 +25,7 @@ const Footer = () => {
                     <a className="link link-hover">Cookie policy</a>
                 </div>
             </footer>
-            <footer className="footer footer-center p-4 bg-black bg-opacity-90 text-white">
+            <footer className="footer footer-center mb-96 p-4 bg-black bg-opacity-90 text-white">
                 <div>
                     <p>Copyright © 2023 - All right reserved by ACOUSTICA</p>
                 </div>
