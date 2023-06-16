@@ -19,6 +19,7 @@ const Header = () => {
         <Link to='/myClasses'>My Classes</Link>
         <Link to='/manageUser'>Manage User </Link>
         <Link to='/manageClasses'>Manage Classes </Link>
+        {user && <Link to='/dashboard'>Dashboard</Link>}
     </>
     return (
         <div>

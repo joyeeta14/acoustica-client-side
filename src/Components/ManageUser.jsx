@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Table from "./Table";
 // import Table from "./Table";
+import { Fade } from "react-awesome-reveal";
+
 
 const ManageUser = () => {
     const [users, setUsers] = useState([]);
@@ -14,6 +16,7 @@ const ManageUser = () => {
 
     return (
         <div className="py-10 font-semibold text-white bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5B0q9MM_Yn4Ho8dPwMoj5yNQweFdouJ4BcxRxuR1d&s')]">
+            <Fade>
             <div className=" overflow-x-auto mt-20">
                 <table className="table">
                     {/* head */}
@@ -31,6 +34,7 @@ const ManageUser = () => {
                     </tbody>
                 </table>
             </div>
+            </Fade>
         </div>
 
     );

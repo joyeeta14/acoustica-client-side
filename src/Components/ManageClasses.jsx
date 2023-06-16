@@ -3,6 +3,7 @@
 import { useLoaderData } from "react-router-dom";
 // import Table from "./Table";
 import ClassTable from "./ClassTable";
+import { Fade } from "react-awesome-reveal";
 
 
 
@@ -14,6 +15,7 @@ const ManageClasses = () => {
     return (
         <div 
         className="py-10 font-semibold text-white bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5B0q9MM_Yn4Ho8dPwMoj5yNQweFdouJ4BcxRxuR1d&s')]">
+            <Fade>
             <div className=" overflow-x-auto mt-20">
                 <table className="table">
                     {/* head */}
@@ -36,6 +38,7 @@ const ManageClasses = () => {
                     </tbody>
                 </table>
             </div>
+            </Fade>
         </div>
 
     );

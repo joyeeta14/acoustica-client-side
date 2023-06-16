@@ -66,8 +66,9 @@ const Login = () => {
                     'You have signed in successfully!',
                     'success'
                   );
+                  navigate(from, {replace: true});
             }
-            navigate(from, {replace: true});
+            
         })
         .catch(error => console.log(error.message))
     }

@@ -1,10 +1,14 @@
 // import React from 'react';
 
+import { Fade } from "react-awesome-reveal";
+
+
 const SectionFloat = () => {
     return (
         <div className=" w-50 mx-auto lg:px-40 -mt-32">
+            <Fade>
             <div className="hero py-20 bg-gray-300">
-                <div className="hero-content text-center">
+            <div className="hero-content text-center">
                     <div className="max-w-md">
                         <h1 className="text-3xl md:text-3xl text-center font-bold">Opening Offer!</h1>
                         <h1 className=" text-5xl pt-2 font-lg md:font-bold lg:font-bold">Get A Free Lesson</h1>
@@ -25,6 +29,7 @@ const SectionFloat = () => {
                     </div>
                 </div>
             </div>
+            </Fade>
         </div>
     );
 };

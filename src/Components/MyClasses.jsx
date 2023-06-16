@@ -2,6 +2,7 @@
 
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
+import { Fade } from "react-awesome-reveal";
 
 const MyClasses = () => {
   const { user } = useContext(AuthContext);
@@ -15,7 +16,8 @@ const MyClasses = () => {
   }, [user])
 
   return (
-    <div className="py-10 font-semibold text-white bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5B0q9MM_Yn4Ho8dPwMoj5yNQweFdouJ4BcxRxuR1d&s')]">
+<Fade>
+<div className="py-10 font-semibold text-white bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5B0q9MM_Yn4Ho8dPwMoj5yNQweFdouJ4BcxRxuR1d&s')]">
       <div className="overflow-x-auto mt-20">
         <table className="table table-zebra">
           {/* head */}
@@ -32,7 +34,7 @@ const MyClasses = () => {
           <tbody>
             {/* row 1 */}
             <tr>
-              <th>1</th>
+              <th>#</th>
               <td> {classes.className} </td>
               <td> {classes.instructorName} </td>
               <td> {classes.instructorEmail} </td>
@@ -43,6 +45,7 @@ const MyClasses = () => {
         </table>
       </div>
     </div>
+</Fade>
   );
 };
 

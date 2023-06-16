@@ -2,11 +2,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import { Fade } from "react-awesome-reveal";
 
 const Slider = () => {
   return (
     <div className="mt-10">
-      <div className="text-5xl font-bold text-center">
+<Fade>
+<div className="text-5xl font-bold text-center">
         Basic Chords Diagram
       </div>
       <Swiper
@@ -37,6 +39,7 @@ const Slider = () => {
           <img className="pt-5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYj66ydR7ySkYN3Z0byvwJR1OKNfp5nX8jcw&usqp=CAU" alt="" />
         </SwiperSlide>
       </Swiper>
+</Fade>
     </div>
   );
 };

@@ -1,10 +1,14 @@
+
+import { Fade } from "react-awesome-reveal";
+
 const Banner = () => {
 
 
     return (
         <div className="bg-[url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701263297.jpg')]">
 
-            <div className="relative isolate px-6 pt-10 lg:px-8">
+<Fade>
+<div className="relative isolate px-6 pt-10 lg:px-8">
                 <div
                     className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
                     aria-hidden="true"
@@ -52,6 +56,7 @@ const Banner = () => {
                     />
                 </div>
             </div>
+</Fade>
         </div>
     )
 }

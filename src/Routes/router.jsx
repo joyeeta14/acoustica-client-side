@@ -58,7 +58,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/approvedClasses',
-                element: <ProtectedRoute><ApprovedClasses></ApprovedClasses></ProtectedRoute>,
+                element: <ApprovedClasses></ApprovedClasses>,
                 loader: ()=>fetch('https://acoustica-server-side.vercel.app/approvedClasses')
                 
             },
